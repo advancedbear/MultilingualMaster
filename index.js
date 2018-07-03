@@ -67,17 +67,16 @@ client.on("message", (message) => {
     }
 })
 
-client.on('messageReactionAdd', (obj)=>{
+client.on('messageReactionAdd', (obj, user)=>{
     let orig = obj.message
     let emoji = obj.emoji
     doTranslate(orig.content.toString(), emoji_flags[emoji.name], (result)=>{
-        let origURL = 'https://discordapp.com/channels/'+orig.channel.guild.id+'/'+orig.channel.id+'/'+orig.id
         let embed = new Discord.RichEmbed()
             .setAuthor(orig.author.username, orig.author.displayAvatarURL)
             .setColor('GOLD')
             .setTimestamp(orig.createdAt)
             .addField('Translated: ',result!=null? result : "Sorry, I can't translate this message. :sob: ")
             .setFooter('Powered by Google Translation API and @advanced_bear.')
-        obj.message.reply({embed})
+        obj.message.channel.send('<@'+user.id+'>',{embed})
     })
 })
