@@ -1,0 +1,24 @@
+{
+  "name": "multilingual-master",
+  "version": "0.0.1",
+  "description": "Translation bot on discord with Google translate API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advancedbear/MultilingualMaster.git"
+  },
+  "author": "advancedbear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/advancedbear/MultilingualMaster/issues"
+  },
+  "homepage": "https://github.com/advancedbear/MultilingualMaster#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "opener": "^1.4.3",
+    "request": "^2.87.0"
+  }
+}
